@@ -1,9 +1,9 @@
 import time
 
 from fastapi import FastAPI
-from repository.todo import TodoItem
-from use_case.create_todo import TodoItem as TodoItemUseCase
-from xhttp.middlewares.response_time import ResponseTimeMiddleware
+from models.todo import TodoItem
+from use_cases.todo_item import TodoItem as TodoItemUseCase
+from routes.middlewares.response_time import ResponseTimeMiddleware
 app = FastAPI()
 
 app.add_middleware(ResponseTimeMiddleware)

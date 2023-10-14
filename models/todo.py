@@ -12,6 +12,3 @@ class TodoItem(BaseModel):
     completed_at: Optional[str] = None
     deleted_at: Optional[str] = None
     deleted: bool = False
-
-    class Config:
-        orm_mode = True
