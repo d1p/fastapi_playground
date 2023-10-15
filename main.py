@@ -1,6 +1,8 @@
 import time
 
 from fastapi import FastAPI
+
+from models.common.pagination import Pagination
 from models.todo import TodoItem
 from use_cases.todo_item import TodoItem as TodoItemUseCase
 from routes.middlewares.response_time import ResponseTimeMiddleware
@@ -15,7 +17,7 @@ async def create_item(item: TodoItem):
     return {"id": _id}
 
 
-@app.get("/items/")
+@app.get("/items/", response_model=Pagination[TodoItem])
 async def get_all_items():
     use_case = TodoItemUseCase()
     items = await use_case.get_all()

@@ -3,6 +3,7 @@ from factory import fuzzy
 
 from models.todo import TodoItem
 
+
 class TodoItemFactory(factory.Factory):
     class Meta:
         model = TodoItem
@@ -11,5 +12,3 @@ class TodoItemFactory(factory.Factory):
     description = fuzzy.FuzzyText(length=10)
     completed = fuzzy.FuzzyChoice([True, False])
     deleted = fuzzy.FuzzyChoice([True, False])
-
-    

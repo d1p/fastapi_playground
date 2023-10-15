@@ -9,6 +9,7 @@ def todos():
     # return 10 todos
     return [TodoItemFactory() for _ in range(10)]
 
+
 @pytest.mark.asyncio
 async def test_get_all_todos(mongodb, mocker, todos):
     # tests use case calls repository method and returns the result
